@@ -1,4 +1,5 @@
 class InMessagesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:getmessage]
   load_and_authorize_resource :except => [:getmessage]
 
   # GET /in_messages
@@ -111,6 +112,7 @@ class InMessagesController < ApplicationController
     @in_message.concat_part = text_concat_part
     @in_message.concat_total = text_concat_total
     @in_message.message_timestamp = Time.now
+    @in_message.status = "received"
 
 
     #save message do DB
@@ -142,7 +144,7 @@ class InMessagesController < ApplicationController
                                         :text => t('default_reply')
                                     })
 
-      logger.info("#{Time.now} Sending text to #{text_from_phone_no} content: #{text_body}")
+      logger.info("#{Time.now} Sending text to #{text_from_phone_no} content: #{t('default_reply')}")
 
 
       if response.ok?

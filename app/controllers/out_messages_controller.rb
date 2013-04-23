@@ -1,4 +1,6 @@
 class OutMessagesController < ApplicationController
+  before_filter :authenticate_user! #, :except => [:getmessage]
+  load_and_authorize_resource #:except => [:getmessage]
   # GET /out_messages
   # GET /out_messages.json
   def index

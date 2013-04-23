@@ -1,4 +1,4 @@
-Testsms::Application.routes.draw do
+Buurtsms::Application.routes.draw do
 
   #get "home/index"
 
