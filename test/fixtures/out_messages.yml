@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  from: MyString
+  to: MyString
+  type: 
+  text: MyText
+  timestamp: 2013-04-23 16:03:09
+  message_date: 2013-04-23 16:03:09
+  direction: MyString
+  message_id: MyString
+  error-text: MyString
+  status: MyString
+  in_messsage_id: 
+
+two:
+  from: MyString
+  to: MyString
+  type: 
+  text: MyText
+  timestamp: 2013-04-23 16:03:09
+  message_date: 2013-04-23 16:03:09
+  direction: MyString
+  message_id: MyString
+  error-text: MyString
+  status: MyString
+  in_messsage_id: 

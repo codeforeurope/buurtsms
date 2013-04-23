@@ -1,0 +1,65 @@
+<%= form_for(@in_message) do |f| %>
+  <% if @in_message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@in_message.errors.count, "error") %> prohibited this in_message from being saved:</h2>
+
+      <ul>
+      <% @in_message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :to %><br />
+    <%= f.text_field :to %>
+  </div>
+  <div class="field">
+    <%= f.label :msisdn %><br />
+    <%= f.text_field :msisdn %>
+  </div>
+  <div class="field">
+    <%= f.label :network_code %><br />
+    <%= f.text_field :network_code %>
+  </div>
+  <div class="field">
+    <%= f.label :message_id %><br />
+    <%= f.text_area :message_id %>
+  </div>
+  <div class="field">
+    <%= f.label :message_timestamp %><br />
+    <%= f.datetime_select :message_timestamp %>
+  </div>
+  <div class="field">
+    <%= f.label :text %><br />
+    <%= f.text_area :text %>
+  </div>
+  <div class="field">
+    <%= f.label :concat %><br />
+    <%= f.check_box :concat %>
+  </div>
+  <div class="field">
+    <%= f.label :concat_ref %><br />
+    <%= f.text_field :concat_ref %>
+  </div>
+  <div class="field">
+    <%= f.label :concat_total %><br />
+    <%= f.text_field :concat_total %>
+  </div>
+  <div class="field">
+    <%= f.label :concat_part %><br />
+    <%= f.text_field :concat_part %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

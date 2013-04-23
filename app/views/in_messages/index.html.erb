@@ -1,0 +1,48 @@
+<h1>Listing in_messages</h1>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>To</th>
+    <th>Msisdn</th>
+    <th>Network code</th>
+    <th>Message</th>
+    <th>Message timestamp</th>
+    <th>Text</th>
+    <th>Concat</th>
+    <th>Concat ref</th>
+    <th>Concat total</th>
+    <th>Concat part</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @in_messages.each do |in_message| %>
+    <tr>
+      <td><%= in_message.type %></td>
+      <td><%= in_message.to %></td>
+      <td><%= in_message.msisdn %></td>
+      <td><%= in_message.network_code %></td>
+      <td><%= in_message.message_id %></td>
+      <td><%= in_message.message_timestamp %></td>
+      <td><%= in_message.text %></td>
+      <td><%= in_message.concat %></td>
+      <td><%= in_message.concat_ref %></td>
+      <td><%= in_message.concat_total %></td>
+      <td><%= in_message.concat_part %></td>
+      <td><%= in_message.status %></td>
+      <td><%= link_to 'Show', in_message %></td>
+      <% if can? :create, InMessage %>
+        <td><%= link_to 'Destroy', in_message, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<br/>
+
+<% if can? :create, InMessage %>
+  <%= link_to 'New In message', new_in_message_path %>
+<% end %>

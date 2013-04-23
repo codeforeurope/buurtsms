@@ -1,0 +1,43 @@
+<h1>Listing out_messages</h1>
+
+<table>
+  <tr>
+    <th>From</th>
+    <th>To</th>
+    <th>Type</th>
+    <th>Text</th>
+    <th>Timestamp</th>
+    <th>Message date</th>
+    <th>Direction</th>
+    <th>Message</th>
+    <th>Error-text</th>
+    <th>Status</th>
+    <th>In messsage</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @out_messages.each do |out_message| %>
+  <tr>
+    <td><%= out_message.from %></td>
+    <td><%= out_message.to %></td>
+    <td><%= out_message.type %></td>
+    <td><%= out_message.text %></td>
+    <td><%= out_message.timestamp %></td>
+    <td><%= out_message.message_date %></td>
+    <td><%= out_message.direction %></td>
+    <td><%= out_message.message_id %></td>
+    <td><%= out_message.error-text %></td>
+    <td><%= out_message.status %></td>
+    <td><%= out_message.in_messsage_id %></td>
+    <td><%= link_to 'Show', out_message %></td>
+    <td><%= link_to 'Edit', edit_out_message_path(out_message) %></td>
+    <td><%= link_to 'Destroy', out_message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Out message', new_out_message_path %>

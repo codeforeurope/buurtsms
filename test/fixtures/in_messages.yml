@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  to: MyString
+  msisdn: MyString
+  network_code: MyString
+  message_id: MyText
+  message_timestamp: 2013-04-23 16:09:15
+  text: MyText
+  concat: false
+  concat_ref: MyString
+  concat_total: 
+  concat_part: 
+  status: MyString
+
+two:
+  type: 
+  to: MyString
+  msisdn: MyString
+  network_code: MyString
+  message_id: MyText
+  message_timestamp: 2013-04-23 16:09:15
+  text: MyText
+  concat: false
+  concat_ref: MyString
+  concat_total: 
+  concat_part: 
+  status: MyString

@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type:</b>
+  <%= @in_message.type %>
+</p>
+
+<p>
+  <b>To:</b>
+  <%= @in_message.to %>
+</p>
+
+<p>
+  <b>Msisdn:</b>
+  <%= @in_message.msisdn %>
+</p>
+
+<p>
+  <b>Network code:</b>
+  <%= @in_message.network_code %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @in_message.message_id %>
+</p>
+
+<p>
+  <b>Message timestamp:</b>
+  <%= @in_message.message_timestamp %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%= @in_message.text %>
+</p>
+
+<p>
+  <b>Concat:</b>
+  <%= @in_message.concat %>
+</p>
+
+<p>
+  <b>Concat ref:</b>
+  <%= @in_message.concat_ref %>
+</p>
+
+<p>
+  <b>Concat total:</b>
+  <%= @in_message.concat_total %>
+</p>
+
+<p>
+  <b>Concat part:</b>
+  <%= @in_message.concat_part %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @in_message.status %>
+</p>
+
+
+<%= link_to 'Back', in_messages_path %>
