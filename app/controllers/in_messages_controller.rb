@@ -84,6 +84,22 @@ class InMessagesController < ApplicationController
     end
   end
 
+
+  def mark_as_posted
+    @in_message = InMessage.find(params[:id])
+    @in_message.posted_to_fb = params[:posted]
+
+    respond_to do |format|
+      if @in_message.save
+        format.html { redirect_to :action => :index, notice: 'Updated' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to in_messages_url, notice: "Impossible to save" }
+        format.json { render json: @in_message.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def getmessage #TO BE USED ONLY BY NEXMO API
 
     # here you can extract more values from parameters as described in nexmo docs.
@@ -103,7 +119,8 @@ class InMessagesController < ApplicationController
     #make new message
     @in_message = InMessage.new
     @in_message.msisdn = text_from_phone_no
-    @in_message.text = text_type
+    @in_message.type = text_type
+    @in_message.text = text_body
     @in_message.to = text_to
     @in_message.network_code = text_network
     @in_message.message_id = text_message_id
@@ -150,6 +167,8 @@ class InMessagesController < ApplicationController
 
       if response.ok?
         logger.info("#{Time.now} Replied OK to #{text_from_phone_no} messageId #{text_message_id}")
+        @in_message.status = "replied"
+        @in_message.save
         render :nothing => true # this will supply the needed http 200 OK
       elsif response.failure?
         raise response.error

@@ -34,9 +34,15 @@
       <td><%= in_message.concat_part %></td>
       <td><%= in_message.status %></td>
       <td><%= link_to 'Show', in_message %></td>
-      <% if can? :create, InMessage %>
-        <td><%= link_to 'Destroy', in_message, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <% if can? :delete, InMessage %>
+        <td><%= link_to 'Destroy', in_message, method: :delete, data: {confirm: 'Are you sure?'} %>
+       </td>
       <% end %>
+      <% if can? :manage, InMessage %>
+        <%= link_to t('Mark as Posted'),
+                    mark_as_posted_in_message_path(in_message, :posted => true), :method => :put%>
+
+    <% end %>
     </tr>
   <% end %>
 </table>

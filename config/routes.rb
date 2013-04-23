@@ -6,7 +6,9 @@ Buurtsms::Application.routes.draw do
     collection do
       get :getmessage
     end
-
+    member do
+      put :mark_as_posted
+    end
   end
 
 

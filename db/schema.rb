@@ -11,9 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423145912) do
+ActiveRecord::Schema.define(:version => 20130423160743) do
 
   create_table "in_messages", :force => true do |t|
+    t.string   "type"
+    t.string   "to"
+    t.string   "msisdn"
+    t.string   "network_code"
+    t.text     "message_id"
+    t.datetime "message_timestamp"
+    t.text     "text"
+    t.boolean  "concat"
+    t.string   "concat_ref"
+    t.integer  "concat_total"
+    t.integer  "concat_part"
+    t.string   "status"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.boolean  "posted_to_fb"
+  end
+
+  create_table "inbound_messages", :force => true do |t|
     t.string   "type"
     t.string   "to"
     t.string   "msisdn"
@@ -31,6 +49,21 @@ ActiveRecord::Schema.define(:version => 20130423145912) do
   end
 
   create_table "out_messages", :force => true do |t|
+    t.string   "from"
+    t.string   "to"
+    t.string   "type"
+    t.text     "text"
+    t.datetime "timestamp"
+    t.datetime "message_date"
+    t.string   "message_id"
+    t.string   "error_text"
+    t.string   "status"
+    t.integer  "in_message_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "outbound_messages", :force => true do |t|
     t.string   "from"
     t.string   "to"
     t.string   "type"
