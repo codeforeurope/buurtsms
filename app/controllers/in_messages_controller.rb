@@ -113,6 +113,7 @@ class InMessagesController < ApplicationController
     @in_message.concat_total = text_concat_total
     @in_message.message_timestamp = Time.now
     @in_message.status = "received"
+    @in_message.posted_to_fb = false
 
 
     #save message do DB
