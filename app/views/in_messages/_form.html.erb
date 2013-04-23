@@ -1,69 +1,86 @@
-<%= form_for(@in_message) do |f| %>
-  <% if @in_message.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@in_message.errors.count, "error") %> prohibited this in_message from being saved:</h2>
-
-      <ul>
-      <% @in_message.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @in_message, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :type, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :type, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :to, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :to, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :msisdn, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :msisdn, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :network_code, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :network_code, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :message_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :message_id, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :message_timestamp, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :message_timestamp, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :text, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :text, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :concat, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :concat, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :concat_ref, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :concat_ref, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :concat_total, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :concat_total, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :concat_part, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :concat_part, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :status, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :status, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :posted_to_fb, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :posted_to_fb, :class => 'check_box' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
-  </div>
-  <div class="field">
-    <%= f.label :to %><br />
-    <%= f.text_field :to %>
-  </div>
-  <div class="field">
-    <%= f.label :msisdn %><br />
-    <%= f.text_field :msisdn %>
-  </div>
-  <div class="field">
-    <%= f.label :network_code %><br />
-    <%= f.text_field :network_code %>
-  </div>
-  <div class="field">
-    <%= f.label :message_id %><br />
-    <%= f.text_area :message_id %>
-  </div>
-  <div class="field">
-    <%= f.label :message_timestamp %><br />
-    <%= f.datetime_select :message_timestamp %>
-  </div>
-  <div class="field">
-    <%= f.label :text %><br />
-    <%= f.text_area :text %>
-  </div>
-  <div class="field">
-    <%= f.label :concat %><br />
-    <%= f.check_box :concat %>
-  </div>
-  <div class="field">
-    <%= f.label :concat_ref %><br />
-    <%= f.text_field :concat_ref %>
-  </div>
-  <div class="field">
-    <%= f.label :concat_total %><br />
-    <%= f.text_field :concat_total %>
-  </div>
-  <div class="field">
-    <%= f.label :concat_part %><br />
-    <%= f.text_field :concat_part %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :posted_to_fb %><br />
-    <%= f.check_box :posted_to_fb %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                in_messages_path, :class => 'btn' %>
   </div>
 <% end %>

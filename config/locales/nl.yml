@@ -2,6 +2,14 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 nl:
-  hello: "Hallo wereld"
+  hello: "Hallo, wereld!"
   in_messages:
     default_reply: "Dank je wel! Uw bericht is ontvangen en geregistreerd"
+  navbar:
+    company_name: "BuurtSMS"
+    logged_in_as: ""
+    in_messages: "SMS Ontvangen"
+    out_messages: "SMS Versturen"
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M:%S"

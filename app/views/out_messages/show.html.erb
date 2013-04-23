@@ -1,60 +1,39 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = OutMessage -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>From:</b>
-  <%= @out_message.from %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:from) %>:</strong></dt>
+  <dd><%= @out_message.from %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:to) %>:</strong></dt>
+  <dd><%= @out_message.to %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:type) %>:</strong></dt>
+  <dd><%= @out_message.type %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:text) %>:</strong></dt>
+  <dd><%= @out_message.text %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:timestamp) %>:</strong></dt>
+  <dd><%= @out_message.timestamp %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:message_date) %>:</strong></dt>
+  <dd><%= @out_message.message_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:message_id) %>:</strong></dt>
+  <dd><%= @out_message.message_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:error_text) %>:</strong></dt>
+  <dd><%= @out_message.error_text %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+  <dd><%= @out_message.status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:in_message_id) %>:</strong></dt>
+  <dd><%= @out_message.in_message_id %></dd>
+</dl>
 
-<p>
-  <b>To:</b>
-  <%= @out_message.to %>
-</p>
-
-<p>
-  <b>Type:</b>
-  <%= @out_message.type %>
-</p>
-
-<p>
-  <b>Text:</b>
-  <%= @out_message.text %>
-</p>
-
-<p>
-  <b>Timestamp:</b>
-  <%= @out_message.timestamp %>
-</p>
-
-<p>
-  <b>Message date:</b>
-  <%= @out_message.message_date %>
-</p>
-
-<p>
-  <b>Direction:</b>
-  <%= @out_message.direction %>
-</p>
-
-<p>
-  <b>Message:</b>
-  <%= @out_message.message_id %>
-</p>
-
-<p>
-  <b>Error-text:</b>
-  <%= @out_message.error-text %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @out_message.status %>
-</p>
-
-<p>
-  <b>In messsage:</b>
-  <%= @out_message.in_messsage_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_out_message_path(@out_message) %> |
-<%= link_to 'Back', out_messages_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              out_messages_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_out_message_path(@out_message), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              out_message_path(@out_message),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

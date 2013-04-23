@@ -5,3 +5,8 @@ en:
   hello: "Hello world"
   in_messages:
   default_reply: "Thank you! Your message has been received and registered"
+  navbar:
+    company_name: "BuurtSMS"
+    logged_in_as: ""
+    in_messages: "Receive Messages"
+    out_messages: "Send Messages"

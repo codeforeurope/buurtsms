@@ -94,7 +94,7 @@ class InMessagesController < ApplicationController
         format.html { redirect_to :action => :index, notice: 'Updated' }
         format.json { head :no_content }
       else
-        format.html { redirect_to in_messages_url, notice: "Impossible to save" }
+        format.html { redirect_to :action => :index, notice: "Unable to save" }
         format.json { render json: @in_message.errors, status: :unprocessable_entity }
       end
     end

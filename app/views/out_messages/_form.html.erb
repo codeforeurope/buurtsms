@@ -1,61 +1,68 @@
-<%= form_for(@out_message) do |f| %>
-  <% if @out_message.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@out_message.errors.count, "error") %> prohibited this out_message from being saved:</h2>
-
-      <ul>
-      <% @out_message.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @out_message, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :from, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :from, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :to, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :to, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :type, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :type, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :text, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :text, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :timestamp, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :timestamp, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :message_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :message_date, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :message_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :message_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :error_text, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :error_text, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :status, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :status, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :in_message_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :in_message_id, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :from %><br />
-    <%= f.text_field :from %>
-  </div>
-  <div class="field">
-    <%= f.label :to %><br />
-    <%= f.text_field :to %>
-  </div>
-  <div class="field">
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
-  </div>
-  <div class="field">
-    <%= f.label :text %><br />
-    <%= f.text_area :text %>
-  </div>
-  <div class="field">
-    <%= f.label :timestamp %><br />
-    <%= f.datetime_select :timestamp %>
-  </div>
-  <div class="field">
-    <%= f.label :message_date %><br />
-    <%= f.datetime_select :message_date %>
-  </div>
-  <div class="field">
-    <%= f.label :direction %><br />
-    <%= f.text_field :direction %>
-  </div>
-  <div class="field">
-    <%= f.label :message_id %><br />
-    <%= f.text_field :message_id %>
-  </div>
-  <div class="field">
-    <%= f.label :error-text %><br />
-    <%= f.text_field :error-text %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :in_messsage_id %><br />
-    <%= f.text_field :in_messsage_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                out_messages_path, :class => 'btn' %>
   </div>
 <% end %>
