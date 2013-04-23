@@ -1,7 +1,5 @@
 Buurtsms::Application.routes.draw do
 
-  #get "home/index"
-
   resources :in_messages do
     collection do
       get :getmessage
@@ -11,21 +9,9 @@ Buurtsms::Application.routes.draw do
     end
   end
 
-
   resources :out_messages
 
-
   devise_for :users
-
-  #connect 'messaging', :controller => 'messagings', :action => 'index'
-
-  #match 'messaging' => 'messagings#index'
-  #
-  #
-  #get "messagings/getmessage"
-  #get "messagings/sendmessage"
-
-
 
 
   # The priority is based upon order of creation:
