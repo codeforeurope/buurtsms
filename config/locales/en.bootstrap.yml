@@ -10,6 +10,7 @@ en:
       confirm: "Are you sure?"
       destroy: "Delete"
       new: "New"
+      show: "Show"
     titles:
       edit: "Edit"
       save: "Save"

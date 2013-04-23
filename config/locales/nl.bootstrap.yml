@@ -3,15 +3,16 @@
 
 nl:
   helpers:
-    actions: "Actions"
+    actions: "Acties"
     links:
-      back: "Back"
-      cancel: "Cancel"
-      confirm: "Are you sure?"
-      destroy: "Delete"
-      new: "New"
+      back: "Terug"
+      cancel: "Annulleren"
+      confirm: "Weet je het zeker?"
+      destroy: "Verwijderen"
+      new: "Nieuw"
+      show: "Zien"
     titles:
-      edit: "Edit"
-      save: "Save"
-      new: "New"
-      delete: "Delete"
+      edit: "Uitgeven"
+      save: "Sparen"
+      new: "Nieuw"
+      delete: "Verwijderen"

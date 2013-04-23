@@ -44,9 +44,9 @@
               <li><span class="user-email"><%= t('navbar.logged_in_as') + " " + current_user.email %></span></li>
 
 
-              <li><%= link_to t('navbar.profile'), "/profile" %></li>
+              <!--<li><%= link_to t('navbar.profile'), "/profile" %></li>-->
               <li class="divider"></li>
-              <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+              <li><%= link_to t('navbar.logout'), destroy_user_session_path, :method => :delete %></li>
 
             <% end %>
           </ul>

@@ -5,11 +5,15 @@ nl:
   hello: "Hallo, wereld!"
   in_messages:
     default_reply: "Dank je wel! Uw bericht is ontvangen en geregistreerd"
+    index:
+      title: "Lijst van SMS ontvangen"
   navbar:
     company_name: "BuurtSMS"
     logged_in_as: ""
     in_messages: "SMS Ontvangen"
     out_messages: "SMS Versturen"
+    logout: "Afmelden"
+    profile: "Profile"
   time:
     formats:
       default: "%d/%m/%Y %H:%M:%S"

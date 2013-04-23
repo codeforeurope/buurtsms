@@ -6,20 +6,20 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:type) %></th>
+      <!--<th><%= model_class.human_attribute_name(:type) %></th>-->
       <th><%= model_class.human_attribute_name(:to) %></th>
       <th><%= model_class.human_attribute_name(:msisdn) %></th>
-      <th><%= model_class.human_attribute_name(:network_code) %></th>
-      <th><%= model_class.human_attribute_name(:message_id) %></th>
+      <!--<th><%= model_class.human_attribute_name(:network_code) %></th>-->
+      <!--<th><%= model_class.human_attribute_name(:message_id) %></th>-->
       <th><%= model_class.human_attribute_name(:message_timestamp) %></th>
       <th><%= model_class.human_attribute_name(:text) %></th>
-      <th><%= model_class.human_attribute_name(:concat) %></th>
-      <th><%= model_class.human_attribute_name(:concat_ref) %></th>
-      <th><%= model_class.human_attribute_name(:concat_total) %></th>
-      <th><%= model_class.human_attribute_name(:concat_part) %></th>
+      <!--<th><%= model_class.human_attribute_name(:concat) %></th>-->
+      <!--<th><%= model_class.human_attribute_name(:concat_ref) %></th>-->
+      <!--<th><%= model_class.human_attribute_name(:concat_total) %></th>-->
+      <!--<th><%= model_class.human_attribute_name(:concat_part) %></th>-->
       <th><%= model_class.human_attribute_name(:status) %></th>
       <th><%= model_class.human_attribute_name(:posted_to_fb) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <!--<th><%= model_class.human_attribute_name(:created_at) %></th>-->
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -27,30 +27,26 @@
     <% @in_messages.each do |in_message| %>
       <tr>
         <td><%= link_to in_message.id, in_message_path(in_message) %></td>
-        <td><%= in_message.type %></td>
+        <!--<td><%= in_message.type %></td>-->
         <td><%= in_message.to %></td>
         <td><%= in_message.msisdn %></td>
-        <td><%= in_message.network_code %></td>
-        <td><%= in_message.message_id %></td>
+        <!--<td><%= in_message.network_code %></td>-->
+        <!--<td><%= in_message.message_id %></td>-->
         <td><%= in_message.message_timestamp %></td>
         <td><%= in_message.text %></td>
-        <td><%= in_message.concat %></td>
-        <td><%= in_message.concat_ref %></td>
-        <td><%= in_message.concat_total %></td>
-        <td><%= in_message.concat_part %></td>
+        <!--<td><%= in_message.concat %></td>-->
+        <!--<td><%= in_message.concat_ref %></td>-->
+        <!--<td><%= in_message.concat_total %></td>-->
+        <!--<td><%= in_message.concat_part %></td>-->
         <td><%= in_message.status %></td>
         <td><%= in_message.posted_to_fb %></td>
-        <td><%=l in_message.created_at %></td>
+        <!--<td><%=l in_message.created_at %></td>-->
         <td>
-          <% if can? :manage, in_message %>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_in_message_path(in_message), :class => 'btn btn-mini' %>
-            <% end %>
+          <%= link_to t('helpers.titles.show'), in_message_path(in_message), :class => 'btn btn-mini' %>
           <% if can? :manage, in_message %>
             <%= link_to t('Mark as Posted'),
                         mark_as_posted_in_message_path(in_message, :posted => true), :method => :put,
                  :class => 'btn btn-mini'%>
-
           <% end %>
           <% if can? :delete, in_message %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
