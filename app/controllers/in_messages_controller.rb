@@ -5,7 +5,7 @@ class InMessagesController < ApplicationController
   # GET /in_messages
   # GET /in_messages.json
   def index
-    @in_messages = InMessage.all
+    @in_messages = InMessage.order('message_timestamp desc').all
 
     respond_to do |format|
       format.html # index.html.erb

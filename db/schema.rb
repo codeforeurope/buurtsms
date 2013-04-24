@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423160743) do
+ActiveRecord::Schema.define(:version => 20130424095903) do
 
   create_table "in_messages", :force => true do |t|
-    t.string   "type"
+    t.string   "message_type"
     t.string   "to"
     t.string   "msisdn"
     t.string   "network_code"

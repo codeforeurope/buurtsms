@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <!--<th><%= model_class.human_attribute_name(:type) %></th>-->
+      <!--<th><%= model_class.human_attribute_name(:message_type) %></th>-->
       <th><%= model_class.human_attribute_name(:to) %></th>
       <th><%= model_class.human_attribute_name(:msisdn) %></th>
       <!--<th><%= model_class.human_attribute_name(:network_code) %></th>-->
@@ -27,7 +27,7 @@
     <% @in_messages.each do |in_message| %>
       <tr>
         <td><%= link_to in_message.id, in_message_path(in_message) %></td>
-        <!--<td><%= in_message.type %></td>-->
+        <!--<td><%= in_message.message_type %></td>-->
         <td><%= in_message.to %></td>
         <td><%= in_message.msisdn %></td>
         <!--<td><%= in_message.network_code %></td>-->
