@@ -4,8 +4,8 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:type) %>:</strong></dt>
-  <dd><%= @in_message.type %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:message_type) %>:</strong></dt>
+  <dd><%= @in_message.message_type %></dd>
   <dt><strong><%= model_class.human_attribute_name(:to) %>:</strong></dt>
   <dd><%= @in_message.to %></dd>
   <dt><strong><%= model_class.human_attribute_name(:msisdn) %>:</strong></dt>
@@ -16,8 +16,8 @@
   <dd><%= @in_message.message_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:message_timestamp) %>:</strong></dt>
   <dd><%= @in_message.message_timestamp %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:text) %>:</strong></dt>
-  <dd><%= @in_message.text %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:message_text) %>:</strong></dt>
+  <dd><%= @in_message.message_text %></dd>
   <dt><strong><%= model_class.human_attribute_name(:concat) %>:</strong></dt>
   <dd><%= @in_message.concat %></dd>
   <dt><strong><%= model_class.human_attribute_name(:concat_ref) %>:</strong></dt>
