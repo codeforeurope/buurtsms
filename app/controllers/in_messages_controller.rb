@@ -119,8 +119,8 @@ class InMessagesController < ApplicationController
     #make new message
     @in_message = InMessage.new
     @in_message.msisdn = text_from_phone_no
-    @in_message.type = text_type
-    @in_message.text = text_body
+    @in_message.message_type = text_type
+    @in_message.message_text = text_body
     @in_message.to = text_to
     @in_message.network_code = text_network
     @in_message.message_id = text_message_id
