@@ -1,45 +1,75 @@
 <%- model_class = InMessage -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+  <h1><%= t '.title', :default => model_class.model_name.human %></h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:message_type) %>:</strong></dt>
-  <dd><%= @in_message.message_type %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:to) %>:</strong></dt>
-  <dd><%= @in_message.to %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:msisdn) %>:</strong></dt>
-  <dd><%= @in_message.msisdn %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:network_code) %>:</strong></dt>
-  <dd><%= @in_message.network_code %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:message_id) %>:</strong></dt>
-  <dd><%= @in_message.message_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:message_timestamp) %>:</strong></dt>
-  <dd><%= @in_message.message_timestamp %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:message_text) %>:</strong></dt>
-  <dd><%= @in_message.message_text %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:concat) %>:</strong></dt>
-  <dd><%= @in_message.concat %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:concat_ref) %>:</strong></dt>
-  <dd><%= @in_message.concat_ref %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:concat_total) %>:</strong></dt>
-  <dd><%= @in_message.concat_total %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:concat_part) %>:</strong></dt>
-  <dd><%= @in_message.concat_part %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
-  <dd><%= @in_message.status %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:posted_to_fb) %>:</strong></dt>
-  <dd><%= @in_message.posted_to_fb %></dd>
-</dl>
+  <div class="row">
+    <dt><strong><%= model_class.human_attribute_name(:message_type) %>:</strong></dt>
+    <dd><%= @in_message.message_type %></dd>
+  </div>
+  <div class="row">
+    <dt><strong><%= model_class.human_attribute_name(:to) %>:</strong></dt>
+    <dd><%= @in_message.to %></dd>
+  </div>
+  <div class="row">
+    <dt><strong><%= model_class.human_attribute_name(:msisdn) %>:</strong></dt>
+    <dd><%= @in_message.msisdn %></dd>
+  </div>
+  <div class="row">
+    <dt><strong><%= model_class.human_attribute_name(:network_code) %>:</strong></dt>
+    <dd><%= @in_message.network_code %></dd>
+  </div>
+  <div class="row">
+    <dt><strong><%= model_class.human_attribute_name(:message_id) %>:</strong></dt>
+    <dd><%= @in_message.message_id %></dd>
+  </div>
+  <div class="row">
+    <dt><strong><%= model_class.human_attribute_name(:message_timestamp) %>:</strong></dt>
+    <dd><%= @in_message.message_timestamp %></dd>
+  </div>
+  <div class="row">
+    <dt><strong><%= model_class.human_attribute_name(:message_text) %>:</strong></dt>
+    <dd><%= @in_message.message_text %></dd>
+  </div>
+  <div class="row">
+    <dt><strong><%= model_class.human_attribute_name(:concat) %>:</strong></dt>
+    <dd><%= @in_message.concat %></dd>
+  </div>
+  <div class="row">
+    <dt><strong><%= model_class.human_attribute_name(:concat_ref) %>:</strong></dt>
+    <dd><%= @in_message.concat_ref %></dd>
+  </div>
+  <div class="row">
+    <dt><strong><%= model_class.human_attribute_name(:concat_total) %>:</strong></dt>
+    <dd><%= @in_message.concat_total %></dd>
+  </div>
+  <div class="row">
+    <dt><strong><%= model_class.human_attribute_name(:concat_part) %>:</strong></dt>
+    <dd><%= @in_message.concat_part %></dd>
+  </div>
+  <div class="row">
+    <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+    <dd><%= @in_message.status %></dd>
+  </div>
+  <div class="row">
+    <dt><strong><%= model_class.human_attribute_name(:posted_to_fb) %>:</strong></dt>
+    <dd><%= @in_message.posted_to_fb %></dd>
+  </div>
+  </dl>
 
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              in_messages_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_in_message_path(@in_message), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              in_message_path(@in_message),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
-</div>
+  <div class="form-actions">
+    <%= link_to t('.back', :default => t("helpers.links.back")),
+                in_messages_path, :class => 'btn' %>
+    <% if can? :manage, @in_message %>
+      <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                  edit_in_message_path(@in_message), :class => 'btn' %>
+    <% end %>
+    <% if can? :delete, @in_message %>
+      <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                  in_message_path(@in_message),
+                  :method => 'delete',
+                  :data => {:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?'))},
+                  :class => 'btn btn-danger' %>
+    <% end %>
+  </div>

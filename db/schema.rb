@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130424095903) do
+ActiveRecord::Schema.define(:version => 20130424103040) do
 
   create_table "in_messages", :force => true do |t|
     t.string   "message_type"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20130424095903) do
     t.string   "network_code"
     t.text     "message_id"
     t.datetime "message_timestamp"
-    t.text     "text"
+    t.text     "message_text"
     t.boolean  "concat"
     t.string   "concat_ref"
     t.integer  "concat_total"
