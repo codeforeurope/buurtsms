@@ -44,7 +44,7 @@
         <!--<td><%=l in_message.created_at %></td>-->
         <td>
           <%= link_to t('helpers.titles.show'), in_message_path(in_message), :class => 'btn btn-mini' %>
-          <% if can? :manage, in_message %>
+          <% if can? :manage, in_message && in_message.posted_to_fb != true %>
             <%= link_to t('Mark as Posted'),
                         mark_as_posted_in_message_path(in_message, :posted => true), :method => :put,
                  :class => 'btn btn-mini'%>
