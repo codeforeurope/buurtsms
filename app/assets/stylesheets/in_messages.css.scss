@@ -1,3 +1,35 @@
 // Place all the styles related to the in_messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "compass/css3/border-radius";
+
+
+fieldset {
+
+  @include border-radius(5px);
+  border: 1px solid #dddddd !important;
+  background-color: #efefef;
+  margin-bottom: 20px !important;
+  padding: 15px;
+
+  .span5 & {
+    min-height: 180px;
+  }
+
+  legend {
+    display: inline;
+    width: auto;
+    padding: 0;
+    margin-bottom: 0px;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #333333;
+    border: 0;
+    margin-left: 20px;
+    background: transparent;
+    padding: 0px 5px;
+  }
+
+}

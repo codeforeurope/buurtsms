@@ -7,6 +7,7 @@ nl:
     default_reply: "Dank je wel! Uw bericht is ontvangen en geregistreerd"
     index:
       title: "Lijst van SMS ontvangen"
+      messages_number: "Sturen de berichten naar dit nummer: "
   navbar:
     company_name: "BuurtSMS"
     logged_in_as: ""
