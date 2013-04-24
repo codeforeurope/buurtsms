@@ -159,7 +159,7 @@ class InMessagesController < ApplicationController
       response = nexmo.send_message({
                                         :from => ENV["NEXMO_FROM"],
                                         :to => text_from_phone_no,
-                                        :text => t('default_reply')
+                                        :text => t('in_messages.default_reply')
                                     })
 
       logger.info("#{Time.now} Sending text to #{text_from_phone_no} content: #{t('default_reply')}")
