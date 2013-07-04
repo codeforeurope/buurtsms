@@ -15,6 +15,7 @@ en:
     out_messages: "Send Messages"
     logout: "Logout"
     profile: "Profile"
+    edit_account: "Edit Account"
   time:
     formats:
       default: "%d/%m/%Y %H:%M:%S"

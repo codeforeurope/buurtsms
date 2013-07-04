@@ -15,6 +15,7 @@ nl:
     out_messages: "SMS Versturen"
     logout: "Afmelden"
     profile: "Profile"
+    edit_account: "Account Bewerken"
   time:
     formats:
       default: "%d/%m/%Y %H:%M:%S"

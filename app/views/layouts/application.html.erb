@@ -42,7 +42,7 @@
           <ul class="nav pull-right">
             <% if user_signed_in? %>
               <li><span class="user-email"><%= t('navbar.logged_in_as') + " " + current_user.email %></span></li>
-
+              <li><%= link_to t('navbar.edit_account'), "/users/edit" %></li>
 
               <!--<li><%= link_to t('navbar.profile'), "/profile" %></li>-->
               <li class="divider"></li>
