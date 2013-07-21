@@ -68,6 +68,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.22)
     multi_json (1.7.2)
+    newrelic_rpm (3.6.5.130)
     nexmo (1.1.0)
     orm_adapter (0.4.0)
     pg (0.15.0)
@@ -132,6 +133,7 @@ DEPENDENCIES
   compass-rails
   devise
   jquery-rails
+  newrelic_rpm
   nexmo
   pg
   rails (= 3.2.13)
