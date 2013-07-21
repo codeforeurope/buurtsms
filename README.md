@@ -10,12 +10,12 @@ By having a single point of contact, people can send SMS to that number, that ca
 Technical Details
 -------
 
-BuurtSMS is a Ruby on Rails application.
-It was designed to run hosted on Heroku, and has been developed on Ruby 1.9.3 + Rails 3.
-User registration is disabled by choice and the users are created via console.
-Registration was disabled by changing the `routes.rb` file. 
-The Heroku instance where it was deployed has Sendgrid configured to send email (for password recovery). Please check the `production.rb` file in the configuration folder and the `sendgrid.rb` initializer files. 
-The default language has been set to 'nl' as it was deployed in Amsterdam.
+* BuurtSMS is a Ruby on Rails application.
+* It was designed to run hosted on Heroku, and has been developed on Ruby 1.9.3 + Rails 3.
+* User registration is disabled by choice and the users are created via console.
+* Registration was disabled by changing the `routes.rb` file. 
+* The Heroku instance where it was deployed has Sendgrid configured to send email (for password recovery). Please check the `production.rb` file in the configuration folder and the `sendgrid.rb` initializer files. 
+* The default language has been set to 'nl' as it was deployed in Amsterdam.
 
 
 
